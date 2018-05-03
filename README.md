@@ -2,7 +2,28 @@
 Some scripts used for PacBio sequencing data processing
 ---
 
-Purity assessment
+Publication
+---
++ In preparation
++ Contact: Weizhi Song (songwz03@gmail.com)
++ Affiliation: The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
+
+
+
+Extract needed reads from SAM file
+---
+        python3 get_reads_from_sam.py -h
+
+        arguments:
+          -h, --help      show this help message and exit
+          -sam            Input sam file
+          -ctgs           Contig id list
+          -option         Specify '1' to get reads mapped to provided contigs, '0' to get reads not mapped to provided contigs
+          -out            Output file
+
+
+
+Purity assessment for diploid assemblies
 ---
 
         python3 get_purity.py -h
@@ -44,3 +65,4 @@ Output files
         Ctg_B4	Reference_1	100.0	0.08
         Ctg_A1	Ambiguous	40.54/59.46	0.07
         Ctg_B1	Ambiguous	50.88/49.12	0.07
+

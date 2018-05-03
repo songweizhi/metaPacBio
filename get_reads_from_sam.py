@@ -13,7 +13,7 @@ parser.add_argument('-ctgs',
 parser.add_argument('-option',
                     required=True,
                     type=int,
-                    help="'0' to export unmapped reads, '1' to export mapped reads")
+                    help="Specify '1' to get reads mapped to provided contigs, '0' to get reads not mapped to provided contigs")
 
 parser.add_argument('-out',
                     required=True,
