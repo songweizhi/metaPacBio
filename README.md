@@ -1,6 +1,6 @@
 
 Some scripts used for PacBio sequencing data processing
----
+
 
 Publication
 ---
@@ -9,8 +9,11 @@ Publication
 + Affiliation: The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
 
 
-Extract needed reads from SAM file
+Extract reads from SAM file
 ---
+
+1. Help information
+
         python3 get_reads_from_sam.py -h
 
         arguments:
@@ -20,9 +23,25 @@ Extract needed reads from SAM file
           -option         Specify '1' to get reads mapped to provided contigs, or '0' to get unmapped reads
           -out            Output reads
 
+1. Contig id file format (one id per line)
+
+        ctg_1
+        ctg_2
+        ctg_3
+
+1. Example commands
+
+        # get reads mapped to provided contigs
+        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
+
+        # get reads not mapped to provided contigs
+        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
+
 
 Purity assessment for diploid assemblies
 ---
+
+1. Help information
 
         python3 get_purity.py -h
 
@@ -45,14 +64,13 @@ Purity assessment for diploid assemblies
           -keep_temp    specify to keep temporary files
           -quiet        specify to suppress reporting information
 
-Output files
----
 
-1. Purity plot
+1. Example commands
 
-![purity_plot](images/DSM17395.haplotigs.purity.png)
+        # assess the purity of query contigs with one million short reads simulated from provided reference genomes
+        $ python3 get_purity.py -r ref_genome_folder -x fasta -q query_contigs.fasta -n 1000000
 
-1. Purity and reference assignment for each query sequences
+1. Output purity results
 
         Sequence_ID	Assignment	Purity(%)	Length(Mbp)
         Ctg_A2	Reference_1	100.0	0.06
@@ -64,3 +82,6 @@ Output files
         Ctg_A1	Ambiguous	40.54/59.46	0.07
         Ctg_B1	Ambiguous	50.88/49.12	0.07
 
+1. Output plot
+
+    ![purity_plot](images/DSM17395.haplotigs.purity.png)
