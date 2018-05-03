@@ -9,7 +9,6 @@ Publication
 + Affiliation: The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
 
 
-
 Extract needed reads from SAM file
 ---
         python3 get_reads_from_sam.py -h
@@ -18,9 +17,8 @@ Extract needed reads from SAM file
           -h, --help      show this help message and exit
           -sam            Input sam file
           -ctgs           Contig id list
-          -option         Specify '1' to get reads mapped to provided contigs, '0' to get reads not mapped to provided contigs
-          -out            Output file
-
+          -option         Specify '1' to get reads mapped to provided contigs, or '0' to get unmapped reads
+          -out            Output reads
 
 
 Purity assessment for diploid assemblies
