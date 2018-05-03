@@ -4,6 +4,7 @@
 
 ### Publication
 ---
+
 + In preparation
 + Contact: Weizhi Song (songwz03@gmail.com)
 + Affiliation: The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
@@ -85,3 +86,4 @@
 1. Output plot
 
     ![purity_plot](images/DSM17395.haplotigs.purity.png)
+
