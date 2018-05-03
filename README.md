@@ -1,5 +1,5 @@
 
-Some scripts used for PacBio sequencing data processing
+## Some scripts for PacBio metagenomic data processing
 
 
 Publication
