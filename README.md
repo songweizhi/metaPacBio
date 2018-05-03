@@ -2,14 +2,14 @@
 ## Some scripts for PacBio metagenomic data processing
 
 
-Publication
+### Publication
 ---
 + In preparation
 + Contact: Weizhi Song (songwz03@gmail.com)
 + Affiliation: The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
 
 
-Extract reads from SAM file
+### Extract reads from SAM file
 ---
 
 1. Help information
@@ -38,7 +38,7 @@ Extract reads from SAM file
         $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
 
 
-Purity assessment for diploid assemblies
+### Purity assessment for diploid assemblies
 ---
 
 1. Help information
