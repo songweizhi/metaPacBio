@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61f895d3-5359-4cff-87f8-c14191d75316" name="Default" comment="" />
+    <list default="true" id="61f895d3-5359-4cff-87f8-c14191d75316" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_circularized_sequences.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_final_correlation_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_final_correlations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_prokka_cmds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_subreads_statistics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_subreads_subset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/heapmap_with_value.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parse_sam.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reads_simulator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rename_ctgs_in_bin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rename_subreads.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/split_fasta.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/Temp_1_get_BS107_gap_sequences.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/Temp_recircularize_as_reference.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/Temp_recircularized_sequenes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/get_purity_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/temp.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,21 +30,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_reads_from_sam.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/get_reads_from_sam.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="Gfm" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -35,6 +73,7 @@
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -91,7 +130,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
@@ -112,8 +151,19 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_reads_from_sam.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="Gfm" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
         </state>
       </provider>
     </entry>

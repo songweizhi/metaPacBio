@@ -26,16 +26,12 @@ Purity assessment
           -keep_temp    specify to keep temporary files
           -quiet        specify to suppress reporting information
 
-Example commands
----
-
-
 Output files
 ---
 
 1. Purity plot
 
-![purity_plot](../images/DSM17395.haplotigs.purity.png)
+![purity_plot](images/DSM17395.haplotigs.purity.png)
 
 1. Purity and reference assignment for each query sequences
 
