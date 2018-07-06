@@ -2,6 +2,7 @@ import os
 import glob
 import shutil
 
+
 ###################################### CONFIGURATION ######################################
 
 nodes_number = 1
@@ -31,6 +32,7 @@ out_file_folder = '/srv/scratch/z5039045/PacBio/2018-07-04_assess_depth/subreads
 #percent = 0.298  # 50x
 percent = 0.595  # 100x
 
+
 ###########################################################################################
 
 os.chdir(wd)
@@ -56,6 +58,7 @@ header = line_1 + line_2 + line_3 + line_4 + line_5 + line_6 + line_7
 module_lines = ''
 for module in modules_needed:
     module_lines += 'module load ' + module + '\n'
+
 
 ################################################################
 

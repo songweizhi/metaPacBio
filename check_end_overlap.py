@@ -2,15 +2,18 @@ import os
 from Bio import SeqIO
 
 
-os.chdir('/Users/songweizhi/Desktop/test_recircularize')
-end_len = 30000
-contig = 'hcq44.fasta'
+#os.chdir('/Users/songweizhi/Desktop/test_recircularize')
+os.chdir('/Users/songweizhi/Desktop/555/000')
+
+end_len = 80000
+contig = 'combined.fasta'
 
 
 for each in SeqIO.parse(contig, 'fasta'):
 
    each_id = each.id
    each_len = len(each.seq)
+   print(each_len)
    file_start = '%s_%s_%s.fasta' % (each_id, 1, end_len)
    file_end = '%s_%s_%s.fasta' % (each_id, (each_len-end_len), each_len)
 
@@ -29,10 +32,13 @@ for each in SeqIO.parse(contig, 'fasta'):
    file_end_handle.close()
 
    # run blast
-   blast_output = '%s_%s_blast_outfmt6.txt' % (each_id, end_len)
-   blastn_cmd = 'blastn -query %s -subject %s -outfmt 6 -out %s' % (file_start, file_end, blast_output)
-   os.system(blastn_cmd)
+   blast_output = '%s_%s_blast.txt' % (each_id, end_len)
+   blast_output_outfmt6 = '%s_%s_blast_outfmt6.txt' % (each_id, end_len)
+   blastn_cmd = 'blastn -query %s -subject %s -out %s' % (file_start, file_end, blast_output)
+   blastn_cmd_outfmt6 = 'blastn -query %s -subject %s -outfmt 6 -out %s' % (file_start, file_end, blast_output_outfmt6)
 
-ds = 0
+   #os.system(blastn_cmd)
+   os.system(blastn_cmd_outfmt6)
+
 
 
