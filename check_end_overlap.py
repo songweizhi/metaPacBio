@@ -2,11 +2,11 @@ import os
 from Bio import SeqIO
 
 
-#os.chdir('/Users/songweizhi/Desktop/test_recircularize')
-os.chdir('/Users/songweizhi/Desktop/555/000')
+os.chdir('/Users/songweizhi/Desktop/test_recircularize')
+#os.chdir('/Users/songweizhi/Desktop/555/AD91A')
 
 end_len = 80000
-contig = 'combined.fasta'
+contig = 'hcq44.fasta'
 
 
 for each in SeqIO.parse(contig, 'fasta'):

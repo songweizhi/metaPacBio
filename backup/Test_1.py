@@ -1,9 +1,9 @@
 import os
 from Bio import SeqIO
 
-os.chdir('/Users/songweizhi/Desktop/555')
+os.chdir('/Users/songweizhi/Desktop/888')
 
-for each in SeqIO.parse('/Users/songweizhi/Desktop/555/SON1053.SP16554.hcq.qv20.fas', 'fasta'):
+for each in SeqIO.parse('/Users/songweizhi/Desktop/888/AD91A_canu.contigs.circularized.quiver1.recircularized.fasta', 'fasta'):
 
     file_name = each.id.split('_')[0] + '.fasta'
 

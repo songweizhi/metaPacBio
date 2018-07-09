@@ -3,7 +3,7 @@ import os
 
 # input
 os.chdir('/Users/songweizhi/Desktop')
-blast_result = 'blast_match.txt'
+blast_result = 'blast_results_AD91A_vs_refs.txt'
 align_len_cutoff = 5000
 
 
@@ -83,5 +83,5 @@ os.remove(tmp2)
 
 
 # call R
-os.system('Rscript ~/PycharmProjects/Binning_refiner/get_sankey_plot.R -f %s -x 600 -y 1300' % sankey_input)
+os.system('Rscript ~/PycharmProjects/metaPacBio/get_sankey_plot.R -f %s -x 600 -y 1300' % sankey_input)
 
