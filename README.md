@@ -73,15 +73,16 @@
 
 1. Output purity results
 
-        Sequence_ID	Assignment	Purity(%)	Length(Mbp)
-        Ctg_A2	Reference_1	100.0	0.06
-        Ctg_A3	Reference_1	99.76	1.81
-        Ctg_A4	Reference_2	100.0	0.05
-        Ctg_A5	Reference_1	99.85	0.3
-        Ctg_B2	Reference_2	100.0	0.06
-        Ctg_B4	Reference_1	100.0	0.08
-        Ctg_A1	Ambiguous	40.54/59.46	0.07
-        Ctg_B1	Ambiguous	50.88/49.12	0.07
+    |Sequence_ID|Assignment|Purity(%)|Length(Mbp)|
+    |---|---|---|---|
+    |Ctg_A2|Reference_1|100.0|0.06|
+    |Ctg_A3|Reference_1|99.76|1.81|
+    |Ctg_A4|Reference_2|100.0|0.05|
+    |Ctg_A5|Reference_1|99.85|0.3|
+    |Ctg_B2|Reference_2|100.0|0.06|
+    |Ctg_B4|Reference_1|100.0|0.08|
+    |Ctg_A1|Ambiguous|40.54/59.46|0.07|
+    |Ctg_B1|Ambiguous|50.88/49.12|0.07|
 
 1. Output plot
 
