@@ -24,13 +24,7 @@
           -option         Specify '1' to get reads mapped to provided contigs, or '0' to get unmapped reads
           -out            Output reads
 
-1. Contig id file format (one id per line)
-
-        ctg_1
-        ctg_2
-        ctg_3
-
-1. Example commands
+1. Example commands below, an example of the ctg_ids.txt file was provided
 
         # get reads mapped to provided contigs
         $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
