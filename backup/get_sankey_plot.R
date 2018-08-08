@@ -52,7 +52,7 @@ if (is.null(opt$file)){
 
 
 my_data = read.csv(opt$file, header = TRUE)
-Sankey_plot_my_data <- gvisSankey(my_data, options = list(sankey = "{node:{colorMode:'unique', labelPadding: 20, nodePadding: 8},link:{colorMode:'source'}}",
+Sankey_plot_my_data <- gvisSankey(my_data, options = list(sankey = "{node:{colorMode:'unique', labelPadding: -100, nodePadding: 8},link:{colorMode:'source'}}",
                                                        height = opt$height, 
                                                        width = opt$width))
 

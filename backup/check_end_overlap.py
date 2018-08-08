@@ -5,8 +5,8 @@ from Bio import SeqIO
 os.chdir('/Users/songweizhi/Desktop/test_recircularize')
 #os.chdir('/Users/songweizhi/Desktop/555/AD91A')
 
-end_len = 80000
-contig = 'hcq44.fasta'
+end_len = 30000
+contig = 'D2.fasta'
 
 
 for each in SeqIO.parse(contig, 'fasta'):
@@ -37,7 +37,7 @@ for each in SeqIO.parse(contig, 'fasta'):
    blastn_cmd = 'blastn -query %s -subject %s -out %s' % (file_start, file_end, blast_output)
    blastn_cmd_outfmt6 = 'blastn -query %s -subject %s -outfmt 6 -out %s' % (file_start, file_end, blast_output_outfmt6)
 
-   #os.system(blastn_cmd)
+   os.system(blastn_cmd)
    os.system(blastn_cmd_outfmt6)
 
 

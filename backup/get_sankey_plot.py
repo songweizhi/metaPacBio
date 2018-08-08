@@ -2,8 +2,13 @@ import os
 
 
 # input
-os.chdir('/Users/songweizhi/Desktop')
-blast_result = 'blast_results_AD91A_vs_refs.txt'
+#os.chdir('/Users/songweizhi/Desktop')
+os.chdir('/Users/songweizhi/Desktop/2018-08-07_Sankey_210_BS107')
+
+
+#blast_result = 'blast_results_AD91A_vs_refs.txt'
+blast_result = 'blast_results.txt'
+
 align_len_cutoff = 5000
 
 
