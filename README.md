@@ -5,7 +5,7 @@
 ### Publication
 ---
 
-+ Song WZ, Thomas T, Edwards R (2018) Complete genome sequences of pooled genomic DNA from 10 marine bacteria using PacBio sequencing. GigaScience, (Final preparation).
++ Song WZ, Thomas T, Edwards R (2018) Complete genome sequences of pooled genomic DNA from 10 marine bacteria using PacBio long-read sequencing. GigaScience, (under review).
 + Contact: Weizhi Song (songwz03@gmail.com)
 + Affiliation: The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
 
