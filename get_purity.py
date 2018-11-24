@@ -258,7 +258,7 @@ parser.add_argument('-r',
 
 parser.add_argument('-x',
                     required=True,
-                    help='the extension of reference files')
+                    help='extension of reference files')
 
 parser.add_argument('-q',
                     required=True,
@@ -267,7 +267,7 @@ parser.add_argument('-q',
 parser.add_argument('-n',
                     required=True,
                     type=int,
-                    help='the number of reads to simulate')
+                    help='number of reads to simulate')
 
 parser.add_argument('-p',
                     required=False,
@@ -285,7 +285,7 @@ parser.add_argument('-i',
                     required=False,
                     type=int,
                     default=500,
-                    help='reads insertion size, default: 500')
+                    help='insertion size, default: 500')
 
 parser.add_argument('-m',
                     required=False,
@@ -296,22 +296,22 @@ parser.add_argument('-m',
 parser.add_argument('-bbmap',
                     required=False,
                     default='bbmap.sh',
-                    help='path to BBMAP executable file, default: bbmap.sh')
+                    help='path to BBMAP executable, default: bbmap.sh')
 
 parser.add_argument('-circle',
                     action="store_true",
                     required=False,
-                    help='specify to simulate reads crossing the breaking point for circularized reference sequences')
+                    help='specify to simulate reads crossing the breaking point for circularized references')
 
 parser.add_argument('-split',
                     action="store_true",
                     required=False,
-                    help='specify to export simulated forward and reverse reads into separate files')
+                    help='export simulated forward/reverse reads into separate files')
 
 parser.add_argument('-keep_temp',
                     action="store_true",
                     required=False,
-                    help='specify to keep temporary files')
+                    help='keep temporary files')
 
 parser.add_argument('-tuning',
                     action="store_true",
@@ -321,7 +321,7 @@ parser.add_argument('-tuning',
 parser.add_argument('-quiet',
                     action="store_true",
                     required=False,
-                    help='specify to suppress reporting information')
+                    help='suppress reporting information')
 
 args = vars(parser.parse_args())
 reference_folder = args['r']

@@ -21,7 +21,7 @@
           -h, --help      show this help message and exit
           -sam            Input sam file
           -ctgs           Contig id list
-          -option         Specify '1' to get reads mapped to provided contigs, or '0' to get unmapped reads
+          -option         Specify '1' to get reads mapped to provided contigs, or '0' to get reads not mapped to provided contigs
           -out            Output reads
 
 1. Example commands below, an example of the ctg_ids.txt file was provided
@@ -42,22 +42,21 @@
 
         arguments:
           -h, --help    show this help message and exit
-          -r R          folder holds reference sequences
-          -x X          the extension of reference files
-          -q Q          query sequences
-          -n N          the total number of reads need to be simulated
-          -p P          purity cut-off for reference assignment, default: 85
-          -l L          the length of simulated reads, default: 250
-          -i I          the insert size of simulated reads, default: 500
-          -m M          the minimum number of mapped reads required for purity
-                        calculation, NON-ZERO, default: 500
-          -bbmap BBMAP  path to BBMAP executable file, default: bbmap.sh
+          -r            folder holds reference sequences
+          -x            extension of reference files
+          -q            query sequences
+          -n            number of reads to simulate
+          -p            purity cut-off for reference assignment, default: 85
+          -l            reads length, default: 250
+          -i            insertion size, default: 500
+          -m            the minimum number of mapped reads required for purity
+                        calculation, NON-ZERO, default: 100
+          -bbmap        path to BBMAP executable, default: bbmap.sh
           -circle       specify to simulate reads crossing the break point if the
-                        reference sequences are circularized
-          -split        specify to export simulated forward and reverse reads into
-                        separate files
-          -keep_temp    specify to keep temporary files
-          -quiet        specify to suppress reporting information
+                        references are circularized
+          -split        export forward/reverse reads into separate files
+          -keep_temp    keep temporary files
+          -quiet        suppress reporting information
 
 
 1. Example commands
