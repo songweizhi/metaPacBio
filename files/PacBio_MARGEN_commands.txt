@@ -1,0 +1,82 @@
+
+########################### De novo assembly of pooled genomes ###########################
+
+
+
+
+
+
+
+
+############################# get P. inhibens subreads subset ############################
+
+# map all subreads to contigs in file SON1053.SP16554.hcq.qv20.fas with blasr
+blasr blasr_input_1.fofn SON1053.SP16554.hcq.qv20.fas -sam -bestn 1 -nproc 16 -out all_ctgs.sam -unaligned all_ctgs_unaligned_reads.fasta 
+
+# get P. inhibens subreads subset
+python3 get_reads_from_sam.py -sam all_ctgs.sam -ctg ctgs_for_non_Phaeobacter_inhibens_genomes.txt -option 0 -out P_inhibens_subreads_subset.fasta
+
+
+
+##################################### run SAMPhaser ######################################
+
+# run SAMPhaser for two combined reference genomes (with 3000bp overlap at breaking points)
+
+# map P. inhibens subreads subset to combined reference genomes 
+blasr blasr_input_2.fofn 210_DSM17395_combined_ref_with_overlap.fasta -sam -nproc 16 -out 210_DSM17395_combined_ref_with_overlap.sam -unaligned 210_DSM17395_combined_ref_with_overlap_unaligned_reads.fasta -placeRepeatsRandomly
+
+# get pileup file
+samtools view -bS 210_DSM17395_combined_ref_with_overlap.sam -o 210_DSM17395_combined_ref_with_overlap.bam
+samtools sort 210_DSM17395_combined_ref_with_overlap.bam -o 210_DSM17395_combined_ref_with_overlap_sorted.bam
+samtools index 210_DSM17395_combined_ref_with_overlap_sorted.bam
+samtools mpileup -BQ0 -d10000000 -f 210_DSM17395_combined_ref_with_overlap.fasta 210_DSM17395_combined_ref_with_overlap_sorted.bam > 210_DSM17395_combined_ref_with_overlap.pileup
+
+# run samphaser
+python samphaser.py seqin=210_DSM17395_combined_ref_with_overlap.fasta pileup=210_DSM17395_combined_ref_with_overlap.pileup basefile=210_DSM17395_combined_with_overlap dev
+
+
+
+########################### get 2.10 and BS107 subreads subset ###########################
+
+# map P. inhibens subreads subset onto samphaser produced 210_DSM17395_combined.haplotigs.fas
+blasr blasr_input_2.fofn 210_DSM17395_combined_with_overlap.haplotigs.fas -sam -nproc 16 -out 210_DSM17395_combined_with_overlap.haplotigs.sam -unaligned 210_DSM17395_combined_with_overlap.haplotigs_unaligned_reads.fasta -placeRepeatsRandomly
+
+# get 2.10 subreads subset
+python3 get_reads_from_sam.py -sam 210_DSM17395_combined_with_overlap.haplotigs.sam -ctg 210_ctgs.txt -option 1 -out 210_subreads.fasta
+
+# get BS107 subreads subset
+python3 get_reads_from_sam.py -sam 210_DSM17395_combined_with_overlap.haplotigs.sam -ctg BS107_ctgs.txt -option 1 -out BS107_subreads.fasta
+
+
+
+######################################## run Canu ########################################
+
+# 2.10
+canu usegrid=false -p 210_canu -d 210_default genomeSize=4.2m -pacbio-raw 210_subreads.fasta
+
+# BS107
+canu usegrid=false -p BS107_canu -d BS107_default genomeSize=4.2m -pacbio-raw BS107_subreads.fasta
+
+
+
+####################################### Circularize ######################################
+
+# Overlapping end regions of assembled circular chromosomes/plasmids were identified by BLASTN and 
+
+# contig circularisation was performed manually by trimming contig ends to the middle of each overlapping region. 
+
+
+
+######################################### Polish #########################################
+
+# 2.10
+samtools faidx 210_canu.contigs.circularized.trimmed.fasta
+pbalign --forQuiver --nproc 16 --pulseFile quiver_h5.fofn subreads.fofn 210_canu.contigs.circularized.trimmed.fasta 210_canu.contigs.circularized.trimmed.cmp.h5
+quiver 210_canu.contigs.circularized.trimmed.cmp.h5 -p P6-C4 -r 210_canu.contigs.circularized.trimmed.fasta -o 210_canu.contigs.circularized.trimmed.quiver1.gff -o 210_canu.contigs.circularized.trimmed.quiver1.fasta -o 210_canu.contigs.circularized.trimmed.quiver1.fastq
+
+# BS107
+cd /srv/scratch/z5039045/PacBio/2018-03-16_quiver_with_overlap/BS107_trimmed_renamed_reads
+samtools faidx BS107_canu.contigs.circularized.trimmed.fasta
+pbalign --forQuiver --nproc 16 --pulseFile quiver_h5.fofn subreads.fofn BS107_canu.contigs.circularized.trimmed.fasta BS107_canu.contigs.circularized.trimmed.cmp.h5
+quiver BS107_canu.contigs.circularized.trimmed.cmp.h5 -p P6-C4 -r BS107_canu.contigs.circularized.trimmed.fasta -o BS107_canu.contigs.circularized.trimmed.quiver1.gff -o BS107_canu.contigs.circularized.trimmed.quiver1.fasta -o BS107_canu.contigs.circularized.trimmed.quiver1.fastq
+
