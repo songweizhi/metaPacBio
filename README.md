@@ -6,31 +6,7 @@
 ---
 
 + **Song WZ**, Thomas T*, Edwards R* (2018) Complete genome sequences of pooled genomic DNA from 10 marine bacteria using PacBio long-read sequencing, (unpublished)
-+ Contact: Weizhi Song (songwz03@gmail.com)
-+ Affiliation: The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
-
-
-### Extract reads from SAM file
----
-
-1. Help information
-
-        python3 get_reads_from_sam.py -h
-
-        arguments:
-          -h, --help      show this help message and exit
-          -sam            Input sam file
-          -ctgs           Contig id list
-          -option         Specify '1' to get reads mapped to provided contigs, or '0' to get reads not mapped to provided contigs
-          -out            Output reads
-
-1. Example commands below, an example of the ctg_ids.txt file was provided
-
-        # get reads mapped to provided contigs
-        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
-
-        # get reads not mapped to provided contigs
-        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
++ The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
 
 
 ### Purity assessment for diploid assemblies
@@ -82,4 +58,14 @@
     ![purity_plot](images/DSM17395.haplotigs.purity.png)
 
 
+### Extract reads from SAM file
+---
+
+1. Some example commands, an example of the ctg_ids.txt file is [here](https://github.com/songweizhi/metaPacBio/blob/master/files/ctg_ids_demo.txt)
+
+        # get reads mapped to provided contigs
+        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
+
+        # get reads not mapped to provided contigs
+        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
 
