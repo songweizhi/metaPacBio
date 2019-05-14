@@ -6,7 +6,7 @@
 ---
 
 + **Song WZ**, Thomas T*, Edwards R* (2018) Complete genome sequences of pooled genomic DNA from 10 marine bacteria using PacBio long-read sequencing, (unpublished)
-+ The Centre for Marine Bio-Innovation (CMB), The University of New South Wales, Sydney, Australia
++ Centre for Marine Bio-Innovation (CMB), University of New South Wales, Sydney, Australia
 
 
 ### Purity assessment for diploid assemblies
@@ -61,7 +61,7 @@
 ### Extract reads from SAM file
 ---
 
-1. Some example commands, an example of the ctg_ids.txt file is [here](https://github.com/songweizhi/metaPacBio/blob/master/files/ctg_ids_demo.txt)
+1. Some example commands, an example of the ctg_ids.txt file is [here](https://github.com/songweizhi/metaPacBio/blob/master/files/ctg_ids_demo.txt).
 
         # get reads mapped to provided contigs
         $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
