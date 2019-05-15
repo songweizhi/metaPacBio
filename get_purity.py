@@ -251,77 +251,20 @@ def get_overall_purity(query_file, pwd_out_txt_file, pwd_output_folder):
 ####################################################### Arguments ######################################################
 
 parser = argparse.ArgumentParser()
-
-parser.add_argument('-r',
-                    required=True,
-                    help='folder holds reference sequences')
-
-parser.add_argument('-x',
-                    required=True,
-                    help='extension of reference files')
-
-parser.add_argument('-q',
-                    required=True,
-                    help='query sequences')
-
-parser.add_argument('-n',
-                    required=True,
-                    type=int,
-                    help='number of reads to simulate')
-
-parser.add_argument('-p',
-                    required=False,
-                    type=int,
-                    default=85,
-                    help='purity cut-off for reference assignment, default: 85')
-
-parser.add_argument('-l',
-                    required=False,
-                    type=int,
-                    default=250,
-                    help='reads length, default: 250')
-
-parser.add_argument('-i',
-                    required=False,
-                    type=int,
-                    default=500,
-                    help='insertion size, default: 500')
-
-parser.add_argument('-m',
-                    required=False,
-                    type=int,
-                    default=100,
-                    help='the minimum number (NONZERO) of mapped reads required for purity calculation, default: 100')
-
-parser.add_argument('-bbmap',
-                    required=False,
-                    default='bbmap.sh',
-                    help='path to BBMAP executable, default: bbmap.sh')
-
-parser.add_argument('-circle',
-                    action="store_true",
-                    required=False,
-                    help='specify to simulate reads crossing the breaking point for circularized references')
-
-parser.add_argument('-split',
-                    action="store_true",
-                    required=False,
-                    help='export simulated forward/reverse reads into separate files')
-
-parser.add_argument('-keep_temp',
-                    action="store_true",
-                    required=False,
-                    help='keep temporary files')
-
-parser.add_argument('-tuning',
-                    action="store_true",
-                    required=False,
-                    help='tuning mode')
-
-parser.add_argument('-quiet',
-                    action="store_true",
-                    required=False,
-                    help='suppress reporting information')
+parser.add_argument('-r',           required=True,          help='folder holds reference sequences')
+parser.add_argument('-x',           required=True,          help='extension of reference files')
+parser.add_argument('-q',           required=True,          help='query sequences')
+parser.add_argument('-n',           required=True,          type=int, help='number of reads to simulate')
+parser.add_argument('-p',           required=False,         type=int, default=85,   help='purity cut-off for reference assignment, default: 85')
+parser.add_argument('-l',           required=False,         type=int, default=250,  help='reads length, default: 250')
+parser.add_argument('-i',           required=False,         type=int, default=500,  help='insertion size, default: 500')
+parser.add_argument('-m',           required=False,         type=int, default=100,  help='the minimum number (NONZERO) of mapped reads required for purity calculation, default: 100')
+parser.add_argument('-bbmap',       required=False,         default='bbmap.sh',     help='path to BBMAP executable, default: bbmap.sh')
+parser.add_argument('-circle',      action="store_true",    required=False,         help='specify to simulate reads crossing the breaking point for circularized references')
+parser.add_argument('-split',       action="store_true",    required=False,         help='export simulated forward/reverse reads into separate files')
+parser.add_argument('-keep_temp',   action="store_true",    required=False,         help='keep temporary files')
+parser.add_argument('-tuning',      action="store_true",    required=False,         help='tuning mode')
+parser.add_argument('-quiet',       action="store_true",    required=False,         help='suppress reporting information')
 
 args = vars(parser.parse_args())
 reference_folder = args['r']
@@ -546,7 +489,6 @@ plt_2_10 = plt.scatter(purity_list_genome_1, seq_length_list_genome_1, c='g', lw
 plt_BS107 = plt.scatter(purity_list_genome_2, seq_length_list_genome_2, c='b', lw=0, s=10)
 plt_Ambiguous = plt.scatter(purity_list_Ambiguous, seq_length_list_Ambiguous, c='r', lw=0, s=10)
 plt.title('Purity: ' + str(purity_overall) + '% (overall), ' + str(purity_plotted) + '% (only plotted)', fontsize=10)
-#plt.title('Overall purity: ' + str(purity_overall) + '%', fontsize=10)
 plt.ylabel('Sequence length (Mbp)', fontsize=10)
 plt.axis([-5, 105, 0, None])  # set the range of X-axis
 

@@ -21,22 +21,10 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-sam',
-                    required=True,
-                    help='Input sam file')
-
-parser.add_argument('-ctgs',
-                    required=True,
-                    help='Contig list')
-
-parser.add_argument('-option',
-                    required=True,
-                    type=int,
-                    help="Specify '1' to get reads mapped to provided contigs, '0' to get reads not mapped to provided contigs")
-
-parser.add_argument('-out',
-                    required=True,
-                    help='Output fasta file')
+parser.add_argument('-sam',     required=True,              help='Input sam file')
+parser.add_argument('-ctgs',    required=True,              help='Contig list')
+parser.add_argument('-option',  required=True, type=int,    help="Specify '1' to get reads mapped to provided contigs, '0' to get reads not mapped to provided contigs")
+parser.add_argument('-out',     required=True,              help='Output fasta file')
 
 args = vars(parser.parse_args())
 sam_file = args['sam']
