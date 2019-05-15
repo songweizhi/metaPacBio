@@ -1,15 +1,25 @@
 
-## Some scripts for PacBio sequencing data processing
-
-
-### Publication
+Publication
 ---
 
 + **Song WZ**, Thomas T*, Edwards R* (2018) Complete genome sequences of pooled genomic DNA from 10 marine bacteria using PacBio long-read sequencing, (unpublished)
 + Centre for Marine Bio-Innovation (CMB), University of New South Wales, Sydney, Australia
 
 
-### Purity assessment for diploid assemblies
+Extract mapped/unmapped reads from SAM file
+---
+
++ See two example commands below, an example of the **ctg_ids.txt** file is [here](https://github.com/songweizhi/metaPacBio/blob/master/files/ctg_ids_demo.txt).
+
+        # get reads mapped to provided contigs
+        python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
+
+        # get reads not mapped to provided contigs
+        python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
+
+
+
+Purity assessment for diploid assemblies
 ---
 
 1. Help information
@@ -37,8 +47,8 @@
 
 1. Example commands
 
-        # assess the purity of query contigs with one million short reads simulated from provided reference genomes
-        $ python3 get_purity.py -r ref_genome_folder -x fasta -q query_contigs.fasta -n 1000000
+       # assess the purity of query contigs with one million short reads simulated from provided reference genomes
+       python3 get_purity.py -r ref_genome_folder -x fasta -q query_contigs.fasta -n 1000000
 
 1. Output purity results
 
@@ -57,15 +67,4 @@
 
     ![purity_plot](images/DSM17395.haplotigs.purity.png)
 
-
-### Extract reads from SAM file
----
-
-1. Some example commands, an example of the ctg_ids.txt file is [here](https://github.com/songweizhi/metaPacBio/blob/master/files/ctg_ids_demo.txt).
-
-        # get reads mapped to provided contigs
-        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
-
-        # get reads not mapped to provided contigs
-        $ python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
 
