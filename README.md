@@ -1,8 +1,12 @@
 
+[![licence        ](https://img.shields.io/static/v1.svg?label=Licence&message=GPL3+)](https://opensource.org/licenses/gpl-3.0.html)
+[![DOI            ](https://img.shields.io/static/v1.svg?label=DOI&message=In-Production&color=orange)]()
+
+
 Publication
 ---
 
-+ **Song WZ**, Thomas T*, Edwards R* (2018) Complete genome sequences of pooled genomic DNA from 10 marine bacteria using PacBio long-read sequencing, (unpublished)
++ **Song WZ**, Thomas T*, Edwards R* (2018) Complete genome sequences of pooled genomic DNA from 10 marine bacteria using PacBio long-read sequencing. Marine Genomics. (Accepted)
 + Centre for Marine Bio-Innovation (CMB), University of New South Wales, Sydney, Australia
 
 
