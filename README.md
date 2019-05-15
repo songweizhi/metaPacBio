@@ -11,11 +11,11 @@ Extract mapped/unmapped reads from SAM file
 
 + See two example commands below, an example of the **ctg_ids.txt** file is [here](https://github.com/songweizhi/metaPacBio/blob/master/files/ctg_ids_demo.txt).
 
-        # get reads mapped to provided contigs
-        python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
+      # get reads mapped to provided contigs
+      python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 1 -out mapped_reads.fasta
 
-        # get reads not mapped to provided contigs
-        python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
+      # get reads not mapped to provided contigs
+      python3 get_reads_from_sam.py -sam input.sam -ctg ctg_ids.txt -option 0 -out unmapped_reads.fasta
 
 
 
