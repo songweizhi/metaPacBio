@@ -1,6 +1,6 @@
 
 [![licence        ](https://img.shields.io/static/v1.svg?label=Licence&message=GPL3+)](https://opensource.org/licenses/gpl-3.0.html)
-[![DOI            ](https://img.shields.io/static/v1.svg?label=DOI&message=In-Production&color=orange)]()
+[![DOI            ](https://img.shields.io/static/v1.svg?label=DOI&message=10.1016/j.margen.2019.05.002&color=orange)](https://doi.org/10.1016/j.margen.2019.05.002)
 
 
 Publication
@@ -10,7 +10,7 @@ Publication
 + Centre for Marine Bio-Innovation (CMB), University of New South Wales, Sydney, Australia
 
 
-Extract mapped/unmapped reads from SAM file
+Extracting mapped/unmapped reads from SAM file
 ---
 
 + See two example commands below, an example of the **ctg_ids.txt** file is [here](https://github.com/songweizhi/metaPacBio/blob/master/files/ctg_ids_demo.txt).

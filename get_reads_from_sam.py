@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('-sam',     required=True,              help='Input sam file')
 parser.add_argument('-ctgs',    required=True,              help='Contig list')
-parser.add_argument('-option',  required=True, type=int,    help="Specify '1' to get reads mapped to provided contigs, '0' to get reads not mapped to provided contigs")
+parser.add_argument('-option',  required=True, type=int,    help="Specify '1' to get reads mapped to provided contigs, or '0' to get reads not mapped to provided contigs")
 parser.add_argument('-out',     required=True,              help='Output fasta file')
 
 args = vars(parser.parse_args())
@@ -34,18 +34,16 @@ option = args['option']
 
 
 # get contig list
-ctg_list = []
+ctg_list = set()
 for each_ctg in open(ctgs_file):
     each_ctg = each_ctg.strip()
-    ctg_list.append(each_ctg)
+    ctg_list.add(each_ctg)
 
 
 # export reads
 output = open(output_file, 'w')
 for each in open(sam_file):
-    if each.startswith('@'):
-        pass
-    else:
+    if not each.startswith('@'):
         each_split = each.strip().split('\t')
         query_name = each_split[0]
         ref_name = each_split[2]
